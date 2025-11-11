@@ -1,11 +1,30 @@
-import { Component } from '@angular/core';
+// src/app/Pages/inicio/inicio.component.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ServiciosService } from '../../services/servicios.service';
+import { Servicio } from '../../models/servicio.model';
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.css'
+  styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit {
+  servicios: Servicio[] = [];
 
+  constructor(private serviciosService: ServiciosService) {}
+
+  ngOnInit(): void {
+    this.servicios = this.serviciosService.obtenerServicios();
+  }
 }

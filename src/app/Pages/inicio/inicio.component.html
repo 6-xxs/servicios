@@ -1,1 +1,53 @@
-<p>inicio works!</p>
+<!-- src/app/Pages/inicio/inicio.component.html -->
+<div class="parallax-container">
+  <!-- Sección de bienvenida con efecto parallax -->
+  <div class="parallax-welcome">
+    <div class="welcome-content">
+      <h1>¡Bienvenido al Futuro del Entretenimiento!</h1>
+      <p>
+        Descubre los mejores servicios de <strong>streaming y música</strong> con planes exclusivos.
+        Películas, series, música y más, <strong>¡todo al alcance de un clic!</strong>
+      </p>
+      <p class="highlight">
+        ¡Oferta especial! Contrata hoy y obtén acceso inmediato a tus plataformas favoritas.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sección de servicios -->
+  <div class="servicios-section">
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios-container">
+      <div *ngFor="let servicio of servicios" class="servicio-card" [style.--servicio-color]="servicio.color">
+        <mat-card>
+          <div class="card-header" [style.background-color]="servicio.color">
+            <img mat-card-image [src]="servicio.imagen" [alt]="servicio.nombre">
+          </div>
+          <mat-card-header>
+            <mat-card-title>{{ servicio.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{ servicio.tipo }} - <strong>{{ servicio.precio }}</strong></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ servicio.descripcion }}</p>
+          </mat-card-content>
+          <mat-card-actions class="button-container">
+            <a mat-raised-button color="primary" [href]="servicio.enlaceWhatsApp" target="_blank" class="share-button">
+              <mat-icon>share</mat-icon> WhatsApp
+            </a>
+            <a mat-raised-button color="accent" [href]="servicio.enlaceFacebook" target="_blank" class="share-button">
+              <mat-icon>share</mat-icon> Facebook
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección final con efecto parallax -->
+  <div class="parallax-footer">
+    <div class="footer-content">
+      <h2>¿Listo para empezar?</h2>
+      <p>Contáctanos y obtén acceso inmediato a tus servicios favoritos.</p>
+    </div>
+  </div>
+</div>
