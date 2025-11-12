@@ -1,5 +1,4 @@
 /* src/app/Pages/inicio/inicio.component.css */
-
 /* Contenedor principal */
 .parallax-container {
   font-family: 'Roboto', sans-serif;
@@ -19,6 +18,7 @@
   color: white;
   text-align: center;
   padding: 0 20px;
+  overflow: hidden; /* Evita que el contenido se salga */
 }
 
 .welcome-content {
@@ -28,6 +28,8 @@
   padding: 30px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto; /* Centra el contenedor */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
 
 .welcome-content h1 {
@@ -50,24 +52,6 @@
   color: #00E676; /* Verde vibrante */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   margin-bottom: 30px;
-}
-
-/* Botón CTA */
-.cta-button {
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  border-radius: 30px;
-  margin: 10px;
-  background: linear-gradient(135deg, #FF5722, #FF7043); /* Naranja vibrante */
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #FF7043, #FF5722);
 }
 
 /* Sección de servicios */
@@ -257,8 +241,23 @@ mat-icon {
     background-attachment: scroll;
   }
 
+  .welcome-content {
+    max-width: 90%; /* Ajusta el ancho máximo para móviles */
+    padding: 20px;
+  }
+
   .welcome-content h1 {
     font-size: 2rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .highlight {
+    font-size: 1.1rem;
+    margin-bottom: 0;
   }
 
   .servicio-card {
@@ -276,12 +275,17 @@ mat-icon {
     height: 40vh;
   }
 
+  .welcome-content {
+    max-width: 95%; /* Más ancho en móviles */
+    padding: 15px;
+  }
+
   .welcome-content h1 {
     font-size: 1.6rem;
   }
 
   .welcome-content p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .footer-content h2 {
